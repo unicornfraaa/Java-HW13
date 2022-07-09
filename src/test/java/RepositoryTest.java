@@ -25,4 +25,20 @@ public class RepositoryTest {
 
         assertArrayEquals(actual,expected);
     }
+
+    @Test
+    public void shouldRemovedById() {
+        repo.add(book1);
+        repo.add(book2);
+        repo.add(phone2);
+        repo.add(phone3);
+
+        repo.removeById(1);
+        repo.removeById(22);
+
+        Product[] actual = repo.findAll();
+        Product [] expected = {book2,phone3};
+
+        assertArrayEquals(actual,expected);
+    }
 }

@@ -14,18 +14,6 @@ public class ProductManagerTest {
     Smartphone phone2 = new Smartphone(22, "S2 phone", 20000, "Xiaomi");
     Smartphone phone3 = new Smartphone(33, "S3", 30000, "Apple");
 
-//    @Test
-//    public void samePartOfNameBook() {
-//        manager.add(book1);
-//        manager.add(book3);
-//        manager.add(book3);
-//
-//        Product[] actual = manager.searchBy("magazine");
-//        Product[] expected = {book1, book2};
-//
-//        assertArrayEquals(expected, actual);
-//    }
-
     @Test
     public void samePartOfNamePhone() {
         manager.add(phone1);
