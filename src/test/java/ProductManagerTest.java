@@ -33,7 +33,7 @@ public class ProductManagerTest {
         manager.add(phone3);
 
         Product[] actual = manager.searchBy("phone");
-        Product[] expected = {book1, book2};
+        Product[] expected = {phone1, phone2};
 
         assertArrayEquals(expected, actual);
     }
