@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RepositoryTest {
@@ -40,5 +41,17 @@ public class RepositoryTest {
         Product [] expected = {book2,phone3};
 
         assertArrayEquals(actual,expected);
+    }
+
+    @Test
+    public void shouldShowException() {
+        repo.add(book1);
+        repo.add(book2);
+        repo.add(phone2);
+        repo.add(phone3);
+
+        Assertions.assertThrows(NotFoundException.class, () -> {
+            repo.removeById(-100);
+        });
     }
 }
