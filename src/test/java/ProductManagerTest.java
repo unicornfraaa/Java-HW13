@@ -37,4 +37,28 @@ public class ProductManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFind1Item() {
+        manager.add(phone1);
+        manager.add(phone2);
+        manager.add(phone3);
+
+        Product[] actual = manager.searchBy("S1");
+        Product[] expected = {phone1};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void cantFindItem() {
+        manager.add(book1);
+        manager.add(phone2);
+        manager.add(phone3);
+
+        Product[] actual = manager.searchBy("second");
+        Product[] expected = {};
+
+        assertArrayEquals(expected, actual);
+    }
 }
